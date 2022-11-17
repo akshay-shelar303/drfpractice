@@ -17,6 +17,7 @@ from django.contrib import admin
 from django.urls import path, include
 from rest_framework.routers import DefaultRouter
 from myapp.views import MyViews
+from demoapp.views import myView
 
 router = DefaultRouter()
 router.register("mv", MyViews)
@@ -25,5 +26,6 @@ router.register("mv/<id:int>", MyViews)
 urlpatterns = [
     path('admin/', admin.site.urls),
     # path('ma/', include("myapp.urls")),
-    path('', include(router.urls))
+    path('', include(router.urls)),
+    path('p/', include('demoapp.urls'))
 ]
