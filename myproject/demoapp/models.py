@@ -13,9 +13,9 @@ class Project(models.Model):
     def __str__(self):
         return f"{self.name}"
 
-@receiver(post_save, sender=Project)
-def make_project_cmplt(sender, instance, **kwargs):
-    instance.completed = True
-    print(instance.completed)
-    instance.save()
+# @receiver(post_save, sender=Project)
+# def make_project_cmplt(sender, instance, **kwargs):
+#     instance.completed = True
+#     print(instance.completed)
+#     instance.save()
 
